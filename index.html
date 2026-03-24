@@ -48,10 +48,12 @@
 
         // Bot Logic
         setTimeout(() => {
-            let reply = "That's crazy... anyway, what else?";
+            let reply = "Ok buddy... anyway, what else?";
 
             if (cleanText.match(/atoms|physics|math|why|space|meaning|exist/)) {
                 reply = excuses[Math.floor(Math.random() * excuses.length)];
+            } else if (cleanText.includes("what can you do")) {
+                reply = "I cannot help you with anything."
             } else if (cleanText.includes("my name is")) {
                 userName = rawText.split("is").pop().trim();
                 reply = `Bet. I'll remember that, ${userName}.`;
